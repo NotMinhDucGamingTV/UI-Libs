@@ -1,6 +1,6 @@
 ## The MinhDucHub Original UI
 Usage:
-``
+```
 local UI = require(script.UI)
 local Window = UI:Window("MinhDocHub")
 local SetSubcription = Window:SetSubscriptionManually("Premium")
@@ -20,5 +20,4 @@ end)
 local HomeTabSeperator = HomeTabs:Seperator()
 local HomeTabText = HomeTabs:Text("SUS")
 local SusHomeTabs = Window:Tabs("SusHome","rbxassetid://3926307971")
-
-``
+```
