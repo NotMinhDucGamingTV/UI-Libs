@@ -1,6 +1,6 @@
 ## The MinhDucHub Original UI
 Usage:
-```
+```lua
 local UI = require(script.UI)
 local Window = UI:Window("MinhDocHub")
 local SetSubcription = Window:SetSubscriptionManually("Premium")
