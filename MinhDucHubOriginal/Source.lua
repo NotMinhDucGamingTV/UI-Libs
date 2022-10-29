@@ -55,7 +55,7 @@ function Ui:Window(TitleName:string)
 	--Properties:
 	---Mains:
 	ScreenGui.Name = TitleName
-	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") -- game.CoreGui
+	ScreenGui.Parent = game.CoreGui
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	Main.Name = "Main"
 	Main.Parent = ScreenGui
