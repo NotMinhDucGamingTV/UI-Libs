@@ -583,7 +583,7 @@ function Ui:Window(TitleName:string)
 		Title_2.Position = UDim2.new(0.300000012, 0, 0.166666672, 0)
 		Title_2.Size = UDim2.new(0, 73, 0, 25)
 		Title_2.Font = Enum.Font.SourceSansItalic
-		Title_2.Text = TitleName
+		Title_2.Text = TabsName
 		Title_2.TextColor3 = Color3.fromRGB(124, 124, 124)
 		Title_2.TextScaled = true
 		Title_2.TextSize = 14.000
