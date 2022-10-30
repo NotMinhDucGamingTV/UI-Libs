@@ -1087,7 +1087,7 @@ function Ui:Window(TitleName:string)
 						CanvaTween:Play()
 			return DropdownFunc
 		end
-		function TabFunctions:Text(TitleNamee:string)
+		function TabFunctions:Text(TitleName:string)
 			local Text = Instance.new("Frame")
 			local Title = Instance.new("TextLabel")
 			Text.Name = TitleName.."Text"
