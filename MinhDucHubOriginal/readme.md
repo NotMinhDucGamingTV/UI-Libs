@@ -1,7 +1,7 @@
 ## The MinhDucHub Original UI
 Usage:
 ```lua
-local UI = require(script.UI)
+local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMinhDucGamingTV/UI-Libs/main/MinhDucHubOriginal/Source.lua",true))()
 local Window = UI:Window("MinhDocHub")
 local SetSubcription = Window:SetSubscriptionManually("Premium")
 local HomeTabs = Window:Tabs("Home","rbxassetid://3926307971")
