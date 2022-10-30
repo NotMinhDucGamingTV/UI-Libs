@@ -1087,17 +1087,17 @@ function Ui:Window(TitleName:string)
 						CanvaTween:Play()
 			return DropdownFunc
 		end
-		function TabFunctions:Text(TitleName:string)
+		function TabFunctions:Text(TextToSet:string)
 			local Text = Instance.new("Frame")
 			local Title = Instance.new("TextLabel")
-			Text.Name = TitleName.."Text"
+			Text.Name = TextToSet.."Text"
 			Text.Parent = ContentFixer
 			Text.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 			Text.BorderSizePixel = 0
 			Text.Size = UDim2.new(1, 0, 0, 30)
 			Title.Name = "Title"
 			Title.Parent = Text
-			Title.Text = TitleName
+			Title.Text = TextToSet
 			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Title.BackgroundTransparency = 1.000
 			Title.Position = UDim2.new(0.0550964177, 0, 0.100000001, 0)
