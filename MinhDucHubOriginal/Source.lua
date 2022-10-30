@@ -368,7 +368,7 @@ function Ui:Window(TitleName:string)
 	end)
 	game:GetService("UserInputService").InputBegan:Connect(function(Input,GPE)
 		if GPE then return end
-		if Input.KeyCode == Enum.KeyCode.LeftControl and Minimalized == false then
+		if Input.KeyCode == Enum.KeyCode.RightControl and Minimalized == false then
 			Minimalized = "Minimalizing"
 			local Tween = game:GetService("TweenService"):Create(Main,TweenInfo.new(.5),{Position = UDim2.new(Main.Position.X.Scale,0,-1,0)})
 			Tween:Play()
@@ -378,7 +378,7 @@ function Ui:Window(TitleName:string)
 					MobileTextLabel.Text = "Open"
 				end
 			end)
-		elseif Input.KeyCode == Enum.KeyCode.LeftControl and Minimalized == true then
+		elseif Input.KeyCode == Enum.KeyCode.RightControl and Minimalized == true then
 			Minimalized = "Minimalizing"
 			local Tween = game:GetService("TweenService"):Create(Main,TweenInfo.new(.5),{Position = UDim2.new(Main.Position.X.Scale,0,0.167322829,0)})
 			Tween:Play()
