@@ -359,7 +359,7 @@ function Ui:Window(TitleName:string)
 		Tween:Play()
 		Tween.Completed:Connect(function()
 			spawn(function()
-				Main:Destroy()
+				ScreenGui:Destroy()
 				if game:GetService("UserInputService").TouchEnabled then
 					MobileBtn:Destroy()
 				end
@@ -1042,6 +1042,7 @@ function Ui:Window(TitleName:string)
 				end
 			end)
 			function DropdownFunc:RenewItem(Item)
+				Items = Item
 				for i,v in pairs(ItemFixer:GetChildren()) do
 					if v:IsA("UIListLayout") then
 					else
