@@ -642,6 +642,7 @@ function Ui:Window(TitleName:string)
 					end)
 				end)
 			elseif CurrentTab ~= nil and CurrentTab ~= TitleName then
+					print("OK",CurrentTab)
 				local tween = game:GetService("TweenService"):Create(Title_2,TweenInfo.new(.15,Enum.EasingStyle.Linear),{TextColor3 = Color3.fromRGB(255,255,255)})
 				local tween2 = game:GetService("TweenService"):Create(home,TweenInfo.new(.15,Enum.EasingStyle.Linear),{ImageColor3 = Color3.fromRGB(255,255,255)})
 				local tween3 = game:GetService("TweenService"):Create(Home,TweenInfo.new(.15,Enum.EasingStyle.Linear),{BorderSizePixel = 1})
