@@ -1041,8 +1041,7 @@ function Ui:Window(TitleName:string)
 					end)
 				end
 			end)
-			function DropdownFunc:RenewItem(Item)
-				Items = Item
+			function DropdownFunc:RenewItem(Items)
 				for i,v in pairs(ItemFixer:GetChildren()) do
 					if v:IsA("UIListLayout") then
 					else
