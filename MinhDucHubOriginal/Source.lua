@@ -55,7 +55,7 @@ function Ui:Window(TitleName:string)
 	--Properties:
 	---Mains:
 	ScreenGui.Name = TitleName
-	ScreenGui.Parent = game.CoreGui
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") -- game.CoreGui
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	Main.Name = "Main"
 	Main.Parent = ScreenGui
@@ -368,7 +368,7 @@ function Ui:Window(TitleName:string)
 	end)
 	game:GetService("UserInputService").InputBegan:Connect(function(Input,GPE)
 		if GPE then return end
-		if Input.KeyCode == Enum.KeyCode.RightControl and Minimalized == false then
+		if Input.KeyCode == Enum.KeyCode.LeftControl and Minimalized == false then
 			Minimalized = "Minimalizing"
 			local Tween = game:GetService("TweenService"):Create(Main,TweenInfo.new(.5),{Position = UDim2.new(Main.Position.X.Scale,0,-1,0)})
 			Tween:Play()
@@ -378,7 +378,7 @@ function Ui:Window(TitleName:string)
 					MobileTextLabel.Text = "Open"
 				end
 			end)
-		elseif Input.KeyCode == Enum.KeyCode.RightControl and Minimalized == true then
+		elseif Input.KeyCode == Enum.KeyCode.LeftControl and Minimalized == true then
 			Minimalized = "Minimalizing"
 			local Tween = game:GetService("TweenService"):Create(Main,TweenInfo.new(.5),{Position = UDim2.new(Main.Position.X.Scale,0,0.167322829,0)})
 			Tween:Play()
@@ -543,7 +543,7 @@ function Ui:Window(TitleName:string)
 	function functions:GetCurrentTab()
 		return CurrentTab,CurrentTabLabel,CurrentTabWindow
 	end
-	function functions:Tabs(TabsName:string,Icon:string)
+	function functions:Tabs(TitleName:string,Icon:string)
 		--Verify Value:
 		if type(Icon) ~= "string" then
 			Icon = ""
@@ -560,7 +560,7 @@ function Ui:Window(TitleName:string)
 		local UIListLayout_2 = Instance.new("UIListLayout")
 		--Propperties:
 		---Tabs Label:
-		Home.Name = TabsName
+		Home.Name = TitleName
 		Home.Parent = Tabs
 		Home.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 		Home.BorderColor3 = Color3.fromRGB(255, 255, 255)
@@ -583,7 +583,7 @@ function Ui:Window(TitleName:string)
 		Title_2.Position = UDim2.new(0.300000012, 0, 0.166666672, 0)
 		Title_2.Size = UDim2.new(0, 73, 0, 25)
 		Title_2.Font = Enum.Font.SourceSansItalic
-		Title_2.Text = TabsName
+		Title_2.Text = TitleName
 		Title_2.TextColor3 = Color3.fromRGB(124, 124, 124)
 		Title_2.TextScaled = true
 		Title_2.TextSize = 14.000
@@ -599,7 +599,7 @@ function Ui:Window(TitleName:string)
 		Button_3.TextColor3 = Color3.fromRGB(0, 0, 0)
 		Button_3.TextSize = 14.000
 		---Tabs Menu:
-		Home_2.Name = TabsName
+		Home_2.Name = TitleName
 		Home_2.Parent = MainMenu
 		Home_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		Home_2.Position = UDim2.new(1,0,0,0)
@@ -668,7 +668,7 @@ function Ui:Window(TitleName:string)
 				end)
 			end
 		end)
-		function TabFunctions:Slider(SliderName:string,MinValue:number,MaxValue:number,StartAt:number,Callback)
+		function TabFunctions:Slider(TitleName:string,MinValue:number,MaxValue:number,StartAt:number,Callback)
 			-- Variable:
 			local lastTween = nil
 			local Dragging = false
@@ -680,7 +680,7 @@ function Ui:Window(TitleName:string)
 			local BttnMain_2 = Instance.new("Frame")
 			local TextButton_4 = Instance.new("TextButton")
 			--Properties:
-			Slider.Name = SliderName.."Slider"
+			Slider.Name = "Slider"
 			Slider.Parent = ContentFixer
 			Slider.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 			Slider.BorderSizePixel = 0
@@ -692,7 +692,7 @@ function Ui:Window(TitleName:string)
 			Title_6.BackgroundTransparency = 1.000
 			Title_6.Position = UDim2.new(0.0606060624, 0, 0.166999817, 0)
 			Title_6.Size = UDim2.new(0.300275475, 0, 0.69999975, 0)
-			Title_6.Text = SliderName
+			Title_6.Text = TitleName
 			Title_6.Font = Enum.Font.SourceSansItalic
 			Title_6.TextColor3 = Color3.fromRGB(166, 166, 166)
 			Title_6.TextScaled = true
@@ -751,7 +751,7 @@ function Ui:Window(TitleName:string)
 				if input.UserInputType == Enum.UserInputType.MouseButton1 then
 					Dragging = false
 					wait(1)
-					Title_6.Text = SliderName
+					Title_6.Text = TitleName
 				end
 			end)
 			game:GetService("UserInputService").InputChanged:Connect(function(input)
@@ -762,12 +762,12 @@ function Ui:Window(TitleName:string)
 			local CanvaTween = game:GetService("TweenService"):Create(Home_2,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,UIListLayout_2.AbsoluteContentSize.Y)})
 						CanvaTween:Play()
 		end
-		function TabFunctions:Button(ButtonName:string,Callback)
+		function TabFunctions:Button(TitleName:string,Callback)
 			local Button = Instance.new("Frame")
 			local Main = Instance.new("Frame")
 			local Title = Instance.new("TextLabel")
 			local TextButton = Instance.new("TextButton")
-			Button.Name = ButtonName.."Button"
+			Button.Name = "Button"
 			Button.Parent = ContentFixer
 			Button.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 			Button.BorderSizePixel = 0
@@ -781,7 +781,7 @@ function Ui:Window(TitleName:string)
 			Title.Name = "Title"
 			Title.Parent = Main
 			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			Title.Text = ButtonName
+			Title.Text = TitleName
 			Title.BackgroundTransparency = 1.000
 			Title.Size = UDim2.new(1, 0, 1, 0)
 			Title.Font = Enum.Font.SourceSansBold
@@ -835,13 +835,13 @@ function Ui:Window(TitleName:string)
 			local CanvaTween = game:GetService("TweenService"):Create(Home_2,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,UIListLayout_2.AbsoluteContentSize.Y)})
 						CanvaTween:Play()
 		end
-		function TabFunctions:Switch(SwitchText:string,Callback)
+		function TabFunctions:Switch(TitleText:string,Callback)
 			local Switch = Instance.new("Frame")
 			local Main = Instance.new("Frame")
 			local BttnMain = Instance.new("Frame")
 			local Title = Instance.new("TextLabel")
 			local TextButton = Instance.new("TextButton")
-			Switch.Name = SwitchText.."Switch"
+			Switch.Name = "Switch"
 			Switch.Parent = ContentFixer
 			Switch.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 			Switch.BorderSizePixel = 0
@@ -864,7 +864,7 @@ function Ui:Window(TitleName:string)
 			Title.BackgroundTransparency = 1.000
 			Title.Position = UDim2.new(0.0606060624, 0, 0.166999817, 0)
 			Title.Size = UDim2.new(0.300275475, 0, 0.69999975, 0)
-			Title.Text = SwitchText
+			Title.Text = TitleName
 			Title.Font = Enum.Font.SourceSansItalic
 			Title.TextColor3 = Color3.fromRGB(166, 166, 166)
 			Title.TextScaled = true
@@ -902,7 +902,7 @@ function Ui:Window(TitleName:string)
 			local CanvaTween = game:GetService("TweenService"):Create(Home_2,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,UIListLayout_2.AbsoluteContentSize.Y)})
 			CanvaTween:Play()
 		end
-		function TabFunctions:Dropdown(DropdownName:string,Items,Callback)
+		function TabFunctions:Dropdown(TitleName:string,Items,Callback)
 			local Dropdown = Instance.new("Frame")
 			local Main = Instance.new("Frame")
 			local Title = Instance.new("TextLabel")
@@ -926,7 +926,7 @@ function Ui:Window(TitleName:string)
 			Main.Size = UDim2.new(0, 336, 0, 21)
 			Title.Name = "Title"
 			Title.Parent = Main
-			Title.Text = DropdownName
+			Title.Text = TitleName
 			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Title.BackgroundTransparency = 1.000
 			Title.Position = UDim2.new(0.0240000002, 0, 0.100000001, 0)
@@ -1087,17 +1087,17 @@ function Ui:Window(TitleName:string)
 						CanvaTween:Play()
 			return DropdownFunc
 		end
-		function TabFunctions:Text(TextToSet:string)
+		function TabFunctions:Text(TitleNamee:string)
 			local Text = Instance.new("Frame")
 			local Title = Instance.new("TextLabel")
-			Text.Name = TextToSet.."Text"
+			Text.Name = TitleName.."Text"
 			Text.Parent = ContentFixer
 			Text.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 			Text.BorderSizePixel = 0
 			Text.Size = UDim2.new(1, 0, 0, 30)
 			Title.Name = "Title"
 			Title.Parent = Text
-			Title.Text = TextToSet
+			Title.Text = TitleName
 			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Title.BackgroundTransparency = 1.000
 			Title.Position = UDim2.new(0.0550964177, 0, 0.100000001, 0)
@@ -1115,4 +1115,5 @@ function Ui:Window(TitleName:string)
 	end
 	return functions
 end
+
 return Ui
