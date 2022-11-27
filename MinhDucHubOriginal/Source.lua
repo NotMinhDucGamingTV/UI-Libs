@@ -638,7 +638,7 @@ function Ui:Window(TitleName:string)
 					tween.Completed:Connect(function()
 						CurrentTabLabel = Home
 						CurrentTabWindow = Home_2
-						CurrentTab = TitleName
+						CurrentTab = TabsName
 					end)
 				end)
 			elseif CurrentTab ~= nil and CurrentTab ~= "Tweening" and CurrentTab ~= TitleName then
@@ -665,7 +665,7 @@ function Ui:Window(TitleName:string)
 						repeat wait(.5) until tween2.Completed
 						CurrentTabLabel = Home
 						CurrentTabWindow = Home_2
-						CurrentTab = TitleName
+						CurrentTab = TabsName
 					end)
 				end)
 			end
