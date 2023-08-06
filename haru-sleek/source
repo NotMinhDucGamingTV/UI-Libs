@@ -81,6 +81,7 @@ function Module:CreateWindow(WindowName:string)
 
 	UIListLayout.Parent = Content
 	UIListLayout.FillDirection = Enum.FillDirection.Vertical
+	UIListLayout.SortOrder =  Enum.SortOrder.LayoutOrder
 	UIListLayout.Padding = UDim.new(0, 5)
 
 	UICorner_2.CornerRadius = UDim.new(0, 10)
