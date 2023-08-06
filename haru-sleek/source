@@ -707,7 +707,7 @@ function Module:CreateWindow(WindowName:string)
 				game:GetService("TweenService"):Create(Dropdown,TweenInfo.new(.5),{Size = UDim2.new(1,0,0,210)}):Play()
 			end)
 			function DropdownFunc:RefreshList(Item)
-				for _, OldStuff in pairs(Content:GetChildren() do
+				for _, OldStuff in pairs(Content:GetChildren()) do
 					if OldStuff:IsA("UIListLayout") then
 					else
 					OldStuff:Destroy()
