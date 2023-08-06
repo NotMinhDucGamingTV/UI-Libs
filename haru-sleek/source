@@ -1,0 +1,891 @@
+local Module = {}
+function Module:CreateWindow(WindowName:string)
+	local WindowFunc = {}
+	_G.UIClosed = false
+	local Hub = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local ImageLabel = Instance.new("ImageLabel")
+	local UICorner = Instance.new("UICorner")
+	local UIStroke = Instance.new("UIStroke")
+	local Tabs = Instance.new("ScrollingFrame")
+	local Content = Instance.new("Frame")
+	local UIListLayout = Instance.new("UIListLayout")
+	local UICorner_2 = Instance.new("UICorner")
+	local UIStroke_2 = Instance.new("UIStroke")
+	local Close = Instance.new("ImageButton")
+	local UICorner_3 = Instance.new("UICorner")
+	local UIStroke_3 = Instance.new("UIStroke")
+	local Item = Instance.new("Frame")
+	local UICorner_4 = Instance.new("UICorner")
+	local Module = Instance.new("Folder")
+	local Circle = Instance.new("ImageLabel")
+	local TextLabel = Instance.new("TextLabel")
+	local Minimalize = Instance.new("ImageButton")
+	local Asset = Instance.new("Folder")
+
+	--Properties:
+	
+	Hub.Name = "Hub"
+	Hub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Hub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Main.Name = "Main"
+	Main.Parent = Hub
+	Main.AnchorPoint = Vector2.new(0.5, 0.5)
+	Main.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	Main.BackgroundTransparency = 0.200
+	Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Main.BorderSizePixel = 0
+	Main.ClipsDescendants = true
+	Main.Position = UDim2.new(0.425778031, 0, 0.5, 0)
+	Main.Size = UDim2.new(0, 684, 0, 364)
+	
+	UIStroke_3.Parent = Main
+	UIStroke_3.Thickness = 2
+	UIStroke_3.Color = Color3.fromRGB(255,255,255)
+	
+	Asset.Name = "Asset"
+	Asset.Parent = Main
+	
+	ImageLabel.Parent = Main
+	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel.BackgroundTransparency = 1.000
+	ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ImageLabel.BorderSizePixel = 0
+	ImageLabel.Position = UDim2.new(0, 8, 0, 7)
+	ImageLabel.Size = UDim2.new(0, 30, 0, 30)
+	ImageLabel.Image = "rbxassetid://14118133946"
+
+	UICorner.CornerRadius = UDim.new(1, 0)
+	UICorner.Parent = ImageLabel
+	
+	Tabs.Name = "Tabs"
+	Tabs.Parent = Main
+	Tabs.Active = true
+	Tabs.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+	Tabs.BackgroundTransparency = 0.500
+	Tabs.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Tabs.BorderSizePixel = 0
+	Tabs.Position = UDim2.new(0, 10, 0, 51)
+	Tabs.Size = UDim2.new(0, 131, 0, 302)
+	Tabs.CanvasSize = UDim2.new(0, 0, 0, 20)
+	Tabs.ScrollBarThickness = 0
+
+	Content.Name = "Content"
+	Content.Parent = Tabs
+	Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Content.BackgroundTransparency = 1.000
+	Content.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Content.BorderSizePixel = 0
+	Content.Size = UDim2.new(1, 0, 1, 0)
+
+	UIListLayout.Parent = Content
+	UIListLayout.FillDirection = Enum.FillDirection.Vertical
+	UIListLayout.Padding = UDim.new(0, 5)
+
+	UICorner_2.CornerRadius = UDim.new(0, 10)
+	wait(.5)
+	UICorner_2.Parent = Tabs
+	
+	UIStroke.Parent = Tabs
+	UIStroke.Thickness = 2
+	UIStroke.Color = Color3.fromRGB(255,255,255)
+
+	Close.Name = "Close"
+	Close.Parent = Main
+	Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Close.BackgroundTransparency = 1.000
+	Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Close.BorderSizePixel = 0
+	Close.Position = UDim2.new(0, 641, 0, 7)
+	Close.Size = UDim2.new(0, 30, 0, 30)
+	Close.Image = "rbxassetid://3926305904"
+	Close.ImageColor3 = Color3.fromRGB(168, 168, 168)
+	Close.ImageRectOffset = Vector2.new(924, 724)
+	Close.ImageRectSize = Vector2.new(36, 36)
+
+	UICorner_3.CornerRadius = UDim.new(0, 10)
+	UICorner_3.Parent = Close
+
+	Item.Name = "Item"
+	Item.Parent = Main
+	Item.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+	Item.BackgroundTransparency = 0.500
+	Item.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Item.BorderSizePixel = 0
+	Item.ClipsDescendants = true
+	Item.Position = UDim2.new(0, 150, 0, 51)
+	Item.Size = UDim2.new(0, 522, 0, 302)
+
+	UICorner_4.CornerRadius = UDim.new(0, 10)
+	UICorner_4.Parent = Item
+	
+	UIStroke_2.Parent = Item
+	UIStroke_2.Thickness = 2
+	UIStroke_2.Color = Color3.fromRGB(255,255,255)
+
+	Module.Name = "Module"
+	Module.Parent = Item
+
+	Circle.Name = "Circle"
+	Circle.Parent = Asset
+	Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Circle.BackgroundTransparency = 1.000
+	Circle.ZIndex = 10
+	Circle.Image = "rbxassetid://266543268"
+	Circle.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	Circle.ImageTransparency = 0.500
+
+	TextLabel.Parent = Main
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabel.BorderSizePixel = 0
+	TextLabel.Position = UDim2.new(0, 47, 0, 7)
+	TextLabel.Size = UDim2.new(0, 256, 0, 30)
+	TextLabel.Font = Enum.Font.Nunito
+	TextLabel.TextColor3 = Color3.fromRGB(191, 191, 191)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 14.000
+	TextLabel.TextWrapped = true
+	TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+	TextLabel.Text = WindowName
+
+	Minimalize.Name = "Minimalize"
+	Minimalize.Parent = Main
+	Minimalize.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Minimalize.BackgroundTransparency = 1.000
+	Minimalize.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Minimalize.BorderSizePixel = 0
+	Minimalize.Position = UDim2.new(0, 618, 0, 12)
+	Minimalize.Size = UDim2.new(0, 20, 0, 20)
+	Minimalize.Image = "rbxassetid://3926305904"
+	Minimalize.ImageColor3 = Color3.fromRGB(168, 168, 168)
+	Minimalize.ImageRectOffset = Vector2.new(44, 164)
+	Minimalize.ImageRectSize = Vector2.new(36, 36)
+	
+	spawn(function()
+		local gui = Main
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+		local function update(input)
+			local delta = input.Position - dragStart
+			gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+		gui.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				dragging = true
+				dragStart = input.Position
+				startPos = gui.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+		gui.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+		game:GetService("UserInputService").InputChanged:Connect(function(input)
+			if input == dragInput and dragging then
+				update(input)
+			end
+		end)
+	end)
+	
+	local function CircleClick(d,b,a)
+		coroutine.resume(coroutine.create(function()
+			d.ClipsDescendants=true 
+			local c=Circle:Clone()
+			c.Parent=d 
+			local b=b-c.AbsolutePosition.X 
+			local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)
+			local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then 
+				a=d.AbsoluteSize.X*1.5 
+			elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then 
+				a=d.AbsoluteSize.Y*1.5 
+			elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then 
+				a=d.AbsoluteSize.X*1.5 end 
+			local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)
+			local Tween = game:GetService("TweenService"):Create(c,TweenInfo.new(1,Enum.EasingStyle.Sine),{ImageTransparency = 1})
+			Tween:Play()
+			Tween.Completed:Connect(function()
+				c:Destroy()
+			end)
+		end))
+	end 
+	
+	spawn(function()
+		Minimalize.MouseEnter:Connect(function()
+			game:GetService("TweenService"):Create(Minimalize,TweenInfo.new(.75), {ImageColor3 = Color3.fromRGB(255,255,255)}):Play()
+		end)
+		Minimalize.MouseLeave:Connect(function()
+			game:GetService("TweenService"):Create(Minimalize,TweenInfo.new(.75), {ImageColor3 = Color3.fromRGB(168,168,168)}):Play()
+		end)
+		Close.MouseEnter:Connect(function()
+			game:GetService("TweenService"):Create(Close,TweenInfo.new(.75), {ImageColor3 = Color3.fromRGB(255,255,255)}):Play()
+		end)
+		Close.MouseLeave:Connect(function()
+			game:GetService("TweenService"):Create(Close,TweenInfo.new(.75), {ImageColor3 = Color3.fromRGB(168,168,168)}):Play()
+		end)
+		Minimalize.MouseButton1Down:Connect(function()
+			if _G.UIClosed == false then
+				game:GetService("TweenService"):Create(Minimalize,TweenInfo.new(.75), {ImageRectOffset = Vector2.new(764, 724)}):Play()
+				local tween = game:GetService("TweenService"):Create(Main,TweenInfo.new(.75), {Size = UDim2.new(0, 684, 0, 43)})
+				tween:Play()
+				tween.Completed:Connect(function()
+					_G.UIClosed = true
+				end)
+			elseif _G.UIClosed == true then
+				game:GetService("TweenService"):Create(Minimalize,TweenInfo.new(.75), {ImageRectOffset = Vector2.new(44, 164)}):Play()
+				local tween = game:GetService("TweenService"):Create(Main,TweenInfo.new(.75), {Size = UDim2.new(0, 684, 0, 364)})
+				tween:Play()
+				tween.Completed:Connect(function()
+					_G.UIClosed = false
+				end)
+			end
+		end)
+		Close.MouseButton1Down:Connect(function()
+			local tween = game:GetService("TweenService"):Create(Main,TweenInfo.new(.5), {Size = UDim2.new(0, 684, 0, 43),Position = UDim2.new(0.5,0,0.5,0)})
+			tween:Play()
+			tween.Completed:Connect(function()
+				wait(.5)
+				local tween = game:GetService("TweenService"):Create(Main,TweenInfo.new(.5), {Size = UDim2.new(0, 43, 0, 43),Position = UDim2.new(0.5,0,0.5,0)})
+				tween:Play()
+				tween.Completed:Connect(function()
+					wait(.5)
+					local tween = game:GetService("TweenService"):Create(Main,TweenInfo.new(.5), {Size = UDim2.new(0, 43, 0, 43),Position = UDim2.new(0.5,0,-1,0)})
+					tween:Play()
+					tween.Completed:Connect(function()
+						Hub:Destroy()
+						script:Destroy()
+					end)
+				end)
+			end)
+		end)
+	end)	
+	function WindowFunc:CreateTab(Name:string)
+		local TabsFunc = {}
+		local TabScrollingFrame = Instance.new("ScrollingFrame")
+		local TabContent = Instance.new("Frame")
+		local TabUIListLayout = Instance.new("UIListLayout")
+		local Tab = Instance.new("Frame")
+		local TabUICorner = Instance.new("UICorner")
+		local TabTextLabel = Instance.new("TextLabel")
+		local TabTextButton = Instance.new("TextButton")
+
+		TabScrollingFrame.Parent = Item
+		TabScrollingFrame.Name = Name
+		TabScrollingFrame.Active = true
+		TabScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabScrollingFrame.BackgroundTransparency = 1.000
+		TabScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabScrollingFrame.BorderSizePixel = 0
+		TabScrollingFrame.Position = UDim2.new(0.0134099619, 0, 0.0364238396, 0)
+		TabScrollingFrame.Size = UDim2.new(0.973180056, 0, 0.963576138, 0)
+		TabScrollingFrame.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+		TabScrollingFrame.ScrollBarThickness = 0
+		TabScrollingFrame.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+
+		TabContent.Name = "Content"
+		TabContent.Parent = TabScrollingFrame
+		TabContent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabContent.BackgroundTransparency = 1.000
+		TabContent.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabContent.BorderSizePixel = 0
+		TabContent.Size = UDim2.new(1, 0, 1, 0)
+
+		TabUIListLayout.Parent = TabContent
+		TabUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		TabUIListLayout.Padding = UDim.new(0, 5)
+
+		Tab.Name = Name
+		Tab.Parent = Content
+		Tab.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
+		Tab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Tab.BorderSizePixel = 0
+		Tab.Size = UDim2.new(0, 131, 0, 25)
+
+		TabUICorner.CornerRadius = UDim.new(0, 10)
+		TabUICorner.Parent = Tab
+
+		TabTextLabel.Parent = Tab
+		TabTextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabTextLabel.BackgroundTransparency = 1.000
+		TabTextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabTextLabel.BorderSizePixel = 0
+		TabTextLabel.Position = UDim2.new(0.0763358772, 0, 0, 0)
+		TabTextLabel.Size = UDim2.new(0.923664093, 0, 1, 0)
+		TabTextLabel.Font = Enum.Font.Nunito
+		TabTextLabel.TextColor3 = Color3.fromRGB(176, 176, 176)
+		TabTextLabel.TextScaled = true
+		TabTextLabel.TextSize = 14.000
+		TabTextLabel.TextWrapped = true
+		TabTextLabel.TextXAlignment = Enum.TextXAlignment.Left
+		TabTextLabel.Text = Name
+
+		TabTextButton.Parent = Tab
+		TabTextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabTextButton.BackgroundTransparency = 1.000
+		TabTextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabTextButton.BorderSizePixel = 0
+		TabTextButton.Size = UDim2.new(1, 0, 1, 0)
+		TabTextButton.Font = Enum.Font.SourceSans
+		TabTextButton.Text = " "
+		TabTextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		TabTextButton.TextSize = 14.000
+		TabTextButton.MouseButton1Down:Connect(function()
+			local m = game.Players.LocalPlayer:GetMouse()
+			CircleClick(TabTextButton,m.X,m.Y)
+			for i,v in pairs(Item:GetChildren()) do
+				if v:IsA("ScrollingFrame") then
+					v.Visible = false
+				end
+			end
+			TabScrollingFrame.Visible = true
+		end)
+		local CanvaTween = game:GetService("TweenService"):Create(Tabs,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,UIListLayout.AbsoluteContentSize.Y)})
+		CanvaTween:Play()
+		function TabsFunc:CreateText(Label:string)
+			local Text = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+			Text.Name = Label
+			Text.Parent = TabContent
+			Text.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+			Text.BackgroundTransparency = 10.000
+			Text.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Text.BorderSizePixel = 0
+			Text.Size = UDim2.new(1, 0, 0, 25)
+
+			UICorner.CornerRadius = UDim.new(0, 10)
+			UICorner.Parent = Text
+
+			Title.Name = "Title"
+			Title.Parent = Text
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Position = UDim2.new(0.025590552, 0, 0, 0)
+			Title.Size = UDim2.new(0, 162, 0, 25)
+			Title.Font = Enum.Font.Nunito
+			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title.TextScaled = true
+			Title.TextSize = 14.000
+			Title.TextWrapped = true
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+			Title.Text = Label
+			local CanvaTween = game:GetService("TweenService"):Create(TabScrollingFrame,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,TabUIListLayout.AbsoluteContentSize.Y)})
+			CanvaTween:Play()
+		end
+		function TabsFunc:CreateSeperator()
+			local Seperator = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local SliderFrame = Instance.new("Frame")
+			local UICorner_2 = Instance.new("UICorner")
+
+			Seperator.Name = "Seperator"
+			Seperator.Parent = TabContent
+			Seperator.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+			Seperator.BackgroundTransparency = 1.000
+			Seperator.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Seperator.BorderSizePixel = 0
+			Seperator.Size = UDim2.new(1, 0, 0, 15)
+
+			UICorner.CornerRadius = UDim.new(0, 10)
+			UICorner.Parent = Seperator
+
+			SliderFrame.Name = "SliderFrame"
+			SliderFrame.Parent = Seperator
+			SliderFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+			SliderFrame.BackgroundColor3 = Color3.fromRGB(115, 115, 115)
+			SliderFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			SliderFrame.BorderSizePixel = 0
+			SliderFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+			SliderFrame.Size = UDim2.new(1, 0, 0, 5)
+
+			UICorner_2.CornerRadius = UDim.new(1, 0)
+			UICorner_2.Parent = SliderFrame
+			local CanvaTween = game:GetService("TweenService"):Create(TabScrollingFrame,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,TabUIListLayout.AbsoluteContentSize.Y)})
+			CanvaTween:Play()
+		end
+		function TabsFunc:CreateSwitch(Title:string,Callback)
+			local State = false
+			local Switch = Instance.new("Frame")
+			local UICorner_2 = Instance.new("UICorner")
+			local Title_2 = Instance.new("TextLabel")
+			local Detector = Instance.new("TextButton")
+			local UICorner_3 = Instance.new("UICorner")
+			local Icon = Instance.new("Frame")
+			local UICorner_4 = Instance.new("UICorner")
+			local StatusIcon = Instance.new("Frame")
+			local UICorner_5 = Instance.new("UICorner")
+			Switch.Name = "Switch"
+			Switch.Parent = TabContent
+			Switch.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+			Switch.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Switch.BorderSizePixel = 0
+			Switch.Size = UDim2.new(1, 0, 0, 25)
+
+			UICorner_2.CornerRadius = UDim.new(0, 10)
+			UICorner_2.Parent = Switch
+
+			Title_2.Name = "Title"
+			Title_2.Parent = Switch
+			Title_2.Text = Title
+			Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title_2.BackgroundTransparency = 1.000
+			Title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title_2.BorderSizePixel = 0
+			Title_2.Position = UDim2.new(0.025590552, 0, 0, 0)
+			Title_2.Size = UDim2.new(0, 162, 0, 25)
+			Title_2.Font = Enum.Font.Nunito
+			Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title_2.TextScaled = true
+			Title_2.TextSize = 14.000
+			Title_2.TextWrapped = true
+			Title_2.TextXAlignment = Enum.TextXAlignment.Left
+
+			Detector.Name = "Detector"
+			Detector.Parent = Switch
+			Detector.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Detector.BackgroundTransparency = 1.000
+			Detector.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Detector.BorderSizePixel = 0
+			Detector.Size = UDim2.new(1, 0, 1, 0)
+			Detector.Font = Enum.Font.SourceSans
+			Detector.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Detector.TextSize = 14.000
+			Detector.TextTransparency = 1.000
+
+			UICorner_3.CornerRadius = UDim.new(0, 10)
+			UICorner_3.Parent = Detector
+
+			Icon.Name = "Icon"
+			Icon.Parent = Switch
+			Icon.AnchorPoint = Vector2.new(0.5, 0.5)
+			Icon.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+			Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Icon.BorderSizePixel = 0
+			Icon.Position = UDim2.new(0.925000012, 0, 0.5, 0)
+			Icon.Size = UDim2.new(0, 45, 0, 20)
+
+			UICorner_4.Parent = Icon
+
+			StatusIcon.Name = "StatusIcon"
+			StatusIcon.Parent = Icon
+			StatusIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			StatusIcon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			StatusIcon.BorderSizePixel = 0
+			StatusIcon.Position = UDim2.new(0, 0, 0, 0)
+			StatusIcon.Size = UDim2.new(0, 20, 0, 20)
+
+			UICorner_5.Parent = StatusIcon
+			Detector.MouseButton1Down:Connect(function()
+				local m = game.Players.LocalPlayer:GetMouse()
+				CircleClick(Switch,m.X,m.Y)
+				if State ==false then
+					local tween = game:GetService("TweenService"):Create(StatusIcon,TweenInfo.new(.25),{Position = UDim2.new(0.574999988,0,0,0)})
+					tween:Play()
+					tween.Completed:Connect(function()
+						State = true
+						Callback(State)
+					end)
+				elseif State == true then
+					local tween = game:GetService("TweenService"):Create(StatusIcon,TweenInfo.new(.25),{Position = UDim2.new(0,0,0,0)})
+					tween:Play()
+					tween.Completed:Connect(function()
+						State = false
+						Callback(State)
+					end)
+				end
+			end)
+			local CanvaTween = game:GetService("TweenService"):Create(TabScrollingFrame,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,TabUIListLayout.AbsoluteContentSize.Y)})
+			CanvaTween:Play()
+		end
+		function TabsFunc:CreateButton(TitleText,Callback)
+			local Button = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+			local Detector = Instance.new("TextButton")
+			local UICorner_2 = Instance.new("UICorner")
+			local Action = Instance.new("TextLabel")
+			Button.Name = TitleText
+			Button.Parent = TabContent
+			Button.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+			Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Button.BorderSizePixel = 0
+			Button.Size = UDim2.new(1, 0, 0, 25)
+
+			UICorner.CornerRadius = UDim.new(0, 10)
+			UICorner.Parent = Button
+
+			Title.Name = "Title"
+			Title.Parent = Button
+			Title.Text = TitleText
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Position = UDim2.new(0.025590552, 0, 0, 0)
+			Title.Size = UDim2.new(0, 162, 0, 25)
+			Title.Font = Enum.Font.Unknown
+			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title.TextScaled = true
+			Title.TextSize = 14.000
+			Title.TextWrapped = true
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			Detector.Name = "Detector"
+			Detector.Parent = Button
+			Detector.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Detector.BackgroundTransparency = 1.000
+			Detector.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Detector.BorderSizePixel = 0
+			Detector.Size = UDim2.new(1, 0, 1, 0)
+			Detector.Font = Enum.Font.SourceSans
+			Detector.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Detector.TextSize = 14.000
+			Detector.TextTransparency = 1.000
+
+			UICorner_2.CornerRadius = UDim.new(0, 10)
+			UICorner_2.Parent = Detector
+
+			Action.Name = "Action"
+			Action.Parent = Button
+			Action.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Action.BackgroundTransparency = 1.000
+			Action.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Action.BorderSizePixel = 0
+			Action.Position = UDim2.new(0.649999976, 0, 0, 0)
+			Action.Size = UDim2.new(0, 162, 0, 25)
+			Action.Font = Enum.Font.Unknown
+			Action.Text = "Click"
+			Action.TextColor3 = Color3.fromRGB(170, 170, 170)
+			Action.TextScaled = true
+			Action.TextSize = 3.000
+			Action.TextWrapped = true
+			Action.TextXAlignment = Enum.TextXAlignment.Right
+			Detector.MouseButton1Down:Connect(function()
+				local m = game.Players.LocalPlayer:GetMouse()
+				CircleClick(Button,m.X,m.Y)
+				Callback()
+			end)
+			local CanvaTween = game:GetService("TweenService"):Create(TabScrollingFrame,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,TabUIListLayout.AbsoluteContentSize.Y)})
+			CanvaTween:Play()
+		end
+		function TabsFunc:CreateDropdown(TitleText,Itemlist,Callback)
+			local DropdownFunc = {}
+			local Dropdown = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+			local Detector = Instance.new("TextButton")
+			local UICorner_2 = Instance.new("UICorner")
+			local DropdownFrame = Instance.new("Frame")
+			local UICorner_3 = Instance.new("UICorner")
+			local ImageLabel = Instance.new("ImageLabel")
+			local Selected = Instance.new("TextLabel")
+			local DropdownItemList = Instance.new("ScrollingFrame")
+			local Content = Instance.new("Frame")
+			local DropUIListLayout = Instance.new("UIListLayout")
+			local UICorner_5 = Instance.new("UICorner")
+			
+			Dropdown.Name = "Dropdown"
+			Dropdown.Parent = TabContent
+			Dropdown.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+			Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Dropdown.BorderSizePixel = 0
+			Dropdown.ClipsDescendants = true
+			Dropdown.Position = UDim2.new(-0.00197011745, 0, 0.147554234, 0)
+			Dropdown.Size = UDim2.new(1, 0, 0, 30)
+
+			UICorner.CornerRadius = UDim.new(0, 10)
+			UICorner.Parent = Dropdown
+
+			Title.Name = "Title"
+			Title.Text = TitleText
+			Title.Parent = Dropdown
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Position = UDim2.new(0, 13, 0, 3)
+			Title.Size = UDim2.new(0, 162, 0, 25)
+			Title.Font = Enum.Font.Nunito
+			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title.TextScaled = true
+			Title.TextSize = 14.000
+			Title.TextWrapped = true
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			Detector.Name = "Detector"
+			Detector.Parent = Dropdown
+			Detector.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Detector.BackgroundTransparency = 1.000
+			Detector.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Detector.BorderSizePixel = 0
+			Detector.Size = UDim2.new(0, 508, 0, 30)
+			Detector.Font = Enum.Font.SourceSans
+			Detector.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Detector.TextSize = 14.000
+			Detector.TextTransparency = 1.000
+
+			UICorner_2.CornerRadius = UDim.new(0, 10)
+			UICorner_2.Parent = Detector
+
+			DropdownFrame.Name = "DropdownFrame"
+			DropdownFrame.Parent = Dropdown
+			DropdownFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+			DropdownFrame.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+			DropdownFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			DropdownFrame.BorderSizePixel = 0
+			DropdownFrame.Position = UDim2.new(0, 383, 0, 15)
+			DropdownFrame.Size = UDim2.new(0, 225, 0, 25)
+
+			UICorner_3.Parent = DropdownFrame
+
+			ImageLabel.Parent = DropdownFrame
+			ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+			ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ImageLabel.BackgroundTransparency = 1.000
+			ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ImageLabel.BorderSizePixel = 0
+			ImageLabel.Position = UDim2.new(0.925000012, 0, 0.449999988, 0)
+			ImageLabel.Rotation = 220.000
+			ImageLabel.Size = UDim2.new(0, 15, 0, 15)
+			ImageLabel.Image = "rbxassetid://3926305904"
+			ImageLabel.ImageRectOffset = Vector2.new(604, 764)
+			ImageLabel.ImageRectSize = Vector2.new(36, 36)
+
+			Selected.Name = "Selected"
+			Selected.Parent = DropdownFrame
+			Selected.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Selected.BackgroundTransparency = 1.000
+			Selected.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Selected.BorderSizePixel = 0
+			Selected.Position = UDim2.new(0, 13, 0, 0)
+			Selected.Size = UDim2.new(0, 162, 0, 25)
+			Selected.Font = Enum.Font.Nunito
+			Selected.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Selected.TextScaled = true
+			Selected.TextSize = 14.000
+			Selected.TextWrapped = true
+			Selected.TextXAlignment = Enum.TextXAlignment.Left
+
+			DropdownItemList.Name = "DropdownItemList"
+			DropdownItemList.Parent = Dropdown
+			DropdownItemList.Active = true
+			DropdownItemList.AnchorPoint = Vector2.new(0.5, 0.5)
+			DropdownItemList.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+			DropdownItemList.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			DropdownItemList.BorderSizePixel = 0
+			DropdownItemList.Position = UDim2.new(0, 253, 0, 115)
+			DropdownItemList.Size = UDim2.new(0, 485, 0, 165)
+			DropdownItemList.ScrollBarThickness = 0
+
+			Content.Name = "Content"
+			Content.Parent = DropdownItemList
+			Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Content.BackgroundTransparency = 1.000
+			Content.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Content.BorderSizePixel = 0
+			Content.Size = UDim2.new(1, 0, 1, 0)
+
+			DropUIListLayout.Parent = Content
+			DropUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+			DropUIListLayout.Padding = UDim.new(0, 3)
+			
+			UICorner_5.Parent = DropdownItemList
+			Detector.MouseButton1Down:Connect(function()
+				game:GetService("TweenService"):Create(Dropdown,TweenInfo.new(.5),{Size = UDim2.new(1,0,0,210)}):Play()
+			end)
+			function DropdownFunc:RefreshList(Item)
+				for i,v in pairs(Item) do
+					local Button = Instance.new("Frame")
+					local Title_2 = Instance.new("TextLabel")
+					local Detector_2 = Instance.new("TextButton")
+					local UICorner_4 = Instance.new("UICorner")
+					local Action = Instance.new("TextLabel")
+					Button.Name = "Button"
+					Button.Parent = Content
+					Button.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+					Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+					Button.BorderSizePixel = 0
+					Button.Size = UDim2.new(1, 0, 0, 25)
+
+					Title_2.Name = v
+					Title_2.Text = v
+					Title_2.Parent = Button
+					Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+					Title_2.BackgroundTransparency = 1.000
+					Title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+					Title_2.BorderSizePixel = 0
+					Title_2.Position = UDim2.new(0.025590552, 0, 0, 0)
+					Title_2.Size = UDim2.new(0, 162, 0, 25)
+					Title_2.Font = Enum.Font.Nunito
+					Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+					Title_2.TextScaled = true
+					Title_2.TextSize = 14.000
+					Title_2.TextWrapped = true
+					Title_2.TextXAlignment = Enum.TextXAlignment.Left
+
+					Detector_2.Name = "Detector"
+					Detector_2.Parent = Button
+					Detector_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+					Detector_2.BackgroundTransparency = 1.000
+					Detector_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+					Detector_2.BorderSizePixel = 0
+					Detector_2.Size = UDim2.new(1, 0, 1, 0)
+					Detector_2.Font = Enum.Font.SourceSans
+					Detector_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+					Detector_2.TextSize = 14.000
+					Detector_2.TextTransparency = 1.000
+
+					UICorner_4.CornerRadius = UDim.new(0, 10)
+					UICorner_4.Parent = Detector_2
+
+					Action.Name = "Action"
+					Action.Parent = Button
+					Action.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+					Action.BackgroundTransparency = 1.000
+					Action.BorderColor3 = Color3.fromRGB(0, 0, 0)
+					Action.BorderSizePixel = 0
+					Action.Position = UDim2.new(0.649999976, 0, 0, 0)
+					Action.Size = UDim2.new(0, 162, 0, 25)
+					Action.Font = Enum.Font.Nunito
+					Action.Text = "Choose"
+					Action.TextColor3 = Color3.fromRGB(170, 170, 170)
+					Action.TextScaled = true
+					Action.TextSize = 3.000
+					Action.TextWrapped = true
+					Action.TextXAlignment = Enum.TextXAlignment.Right
+					Detector_2.MouseButton1Down:Connect(function()
+						Selected.Text = v
+							local m = game.Players.LocalPlayer:GetMouse()
+							CircleClick(Button,m.X,m.Y)
+						game:GetService("TweenService"):Create(Dropdown,TweenInfo.new(.5),{Size = UDim2.new(1,0,0,30)}):Play()
+						Callback(v)
+					end)
+					game:GetService("TweenService"):Create(DropdownItemList,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,DropUIListLayout.AbsoluteContentSize.Y)}):Play()
+				end
+			end
+			DropdownFunc:RefreshList(Itemlist)
+			local CanvaTween = game:GetService("TweenService"):Create(TabScrollingFrame,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,TabUIListLayout.AbsoluteContentSize.Y)})
+			CanvaTween:Play()
+			return DropdownFunc
+		end
+		function TabsFunc:CreateSlider(SliderName,MinValue,MaxValue,StartingValue,Callback)
+			local SliderFunc = {}
+			local Slider = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+			local Detector = Instance.new("TextButton")
+			local UICorner_2 = Instance.new("UICorner")
+			local SliderFrame = Instance.new("Frame")
+			local UICorner_3 = Instance.new("UICorner")
+			local StatusIcon = Instance.new("Frame")
+			local UICorner_4 = Instance.new("UICorner")
+			Slider.Name = "Slider"
+			Slider.Parent = TabContent
+			Slider.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+			Slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Slider.BorderSizePixel = 0
+			Slider.Size = UDim2.new(1, 0, 0, 25)
+
+			UICorner.CornerRadius = UDim.new(0, 10)
+			UICorner.Parent = Slider
+
+			Title.Name = SliderName
+			Title.Parent = Slider
+			Title.Text = SliderName
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Position = UDim2.new(0.025590552, 0, 0, 0)
+			Title.Size = UDim2.new(0, 162, 0, 25)
+			Title.Font = Enum.Font.Unknown
+			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title.TextScaled = true
+			Title.TextSize = 14.000
+			Title.TextWrapped = true
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UICorner_2.CornerRadius = UDim.new(0, 10)
+			UICorner_2.Parent = Detector
+
+			SliderFrame.Name = "SliderFrame"
+			SliderFrame.Parent = Slider
+			SliderFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+			SliderFrame.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+			SliderFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			SliderFrame.BorderSizePixel = 0
+			SliderFrame.Position = UDim2.new(0.754999995, 0, 0.5, 0)
+			SliderFrame.Size = UDim2.new(0, 225, 0, 10)
+
+			UICorner_3.Parent = SliderFrame
+
+			StatusIcon.Name = "StatusIcon"
+			StatusIcon.Parent = SliderFrame
+			StatusIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			StatusIcon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			StatusIcon.BorderSizePixel = 0
+			StatusIcon.Position = UDim2.new(0.954999983, 0, 0, 0)
+			StatusIcon.Size = UDim2.new(0, 10, 0, 10)
+
+			UICorner_4.Parent = StatusIcon
+			
+			Detector.Name = "Detector"
+			Detector.Parent = StatusIcon
+			Detector.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Detector.BackgroundTransparency = 1.000
+			Detector.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Detector.BorderSizePixel = 0
+			Detector.Size = UDim2.new(1, 0, 1, 0)
+			Detector.Font = Enum.Font.SourceSans
+			Detector.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Detector.TextSize = 14.000
+			Detector.TextTransparency = 1.000
+			local Dragging = false
+			local function move(input)
+				local MLocation = game:GetService("UserInputService"):GetMouseLocation()
+				local RelativePos = (MLocation - Slider.AbsolutePosition)
+				local pos =	UDim2.new(math.clamp(RelativePos.X / Slider.AbsoluteSize.X, 0, 1),-5,0,0)
+				StatusIcon.Position = pos
+				local value = math.floor(((pos.X.Scale * MaxValue) / MaxValue) * (MaxValue - MinValue) + MinValue)
+				spawn(function()
+					Title.Text = SliderName..": "..tostring(value)
+				end)
+				pcall(Callback, value)
+			end
+			Detector.InputBegan:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Dragging = true
+				end
+			end)
+			Detector.InputEnded:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Dragging = false
+					wait(1)
+					Title.Text = SliderName
+				end
+			end)
+			game:GetService("UserInputService").InputChanged:Connect(function(input)
+				if Dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+					move(input)
+				end
+			end)
+			local CanvaTween = game:GetService("TweenService"):Create(TabScrollingFrame,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,TabUIListLayout.AbsoluteContentSize.Y)})
+			CanvaTween:Play()
+		end
+		return TabsFunc
+	end
+	return WindowFunc
+end
+return Module
