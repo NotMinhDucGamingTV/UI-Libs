@@ -712,6 +712,7 @@ function Module:CreateWindow(WindowName:string)
 					else
 					OldStuff:Destroy()
 					end
+				end
 				for i,v in pairs(Item) do
 					local Button = Instance.new("Frame")
 					local Title_2 = Instance.new("TextLabel")
