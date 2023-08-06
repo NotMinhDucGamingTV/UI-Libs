@@ -291,7 +291,8 @@ function Module:CreateWindow(WindowName:string)
 		TabScrollingFrame.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
 		TabScrollingFrame.ScrollBarThickness = 0
 		TabScrollingFrame.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
-
+		TabScrollingFrame.Visible = false
+		
 		TabContent.Name = "Content"
 		TabContent.Parent = TabScrollingFrame
 		TabContent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -706,6 +707,11 @@ function Module:CreateWindow(WindowName:string)
 				game:GetService("TweenService"):Create(Dropdown,TweenInfo.new(.5),{Size = UDim2.new(1,0,0,210)}):Play()
 			end)
 			function DropdownFunc:RefreshList(Item)
+				for _, OldStuff in pairs(Content:GetChildren() do
+					if OldStuff:IsA("UIListLayout") then
+					else
+					OldStuff:Destroy()
+					end
 				for i,v in pairs(Item) do
 					local Button = Instance.new("Frame")
 					local Title_2 = Instance.new("TextLabel")
