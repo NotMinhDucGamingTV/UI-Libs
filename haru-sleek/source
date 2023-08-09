@@ -26,7 +26,7 @@ function Module:CreateWindow(WindowName:string)
 	--Properties:
 	
 	Hub.Name = "Hub"
-	Hub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Hub.Parent = game.CoreGui
 	Hub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	Main.Name = "Main"
