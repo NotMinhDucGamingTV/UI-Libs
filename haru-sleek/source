@@ -354,6 +354,7 @@ function Module:CreateWindow(WindowName:string)
 		local CanvaTween = game:GetService("TweenService"):Create(Tabs,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,UIListLayout.AbsoluteContentSize.Y)})
 		CanvaTween:Play()
 		function TabsFunc:CreateText(Label:string)
+			local textfunc = {}
 			local Text = Instance.new("Frame")
 			local UICorner = Instance.new("UICorner")
 			local Title = Instance.new("TextLabel")
@@ -385,6 +386,9 @@ function Module:CreateWindow(WindowName:string)
 			Title.Text = Label
 			local CanvaTween = game:GetService("TweenService"):Create(TabScrollingFrame,TweenInfo.new(.5),{CanvasSize = UDim2.new(0,0,0,TabUIListLayout.AbsoluteContentSize.Y)})
 			CanvaTween:Play()
+			function textfunc:ChangeText(TittleText)
+			    Title.Text = TittleText
+			end
 		end
 		function TabsFunc:CreateSeperator()
 			local Seperator = Instance.new("Frame")
