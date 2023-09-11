@@ -389,6 +389,7 @@ function Module:CreateWindow(WindowName:string)
 			function textfunc:ChangeText(TittleText)
 			    Title.Text = TittleText
 			end
+			return textfunc
 		end
 		function TabsFunc:CreateSeperator()
 			local Seperator = Instance.new("Frame")
